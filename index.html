@@ -2,108 +2,79 @@
 <html>
   <head>
     <title>WinTo7</title>
-    <meta charset="UTF-8">
     <style>
-      /* CSS para centrar elementos */
-      body, html {
-        height: 100%;
-        margin: 0;
-        padding: 0;
+      body {
+        background-image: url("https://i.imgur.com/3AiL3yN.png");
+        background-size: cover;
+        background-position: center;
+        filter: blur(60%);
       }
-      .center {
+
+      #center {
+        text-align: center;
+      }
+
+      #subheading {
+        text-align: center;
+        margin-top: 10px;
+        margin-bottom: 40px;
+        font-size: 24px;
+      }
+
+      #image-container {
         display: flex;
         justify-content: center;
-        align-items: center;
-        flex-direction: column;
-        height: 100%;
+        margin-bottom: 40px;
       }
-      .btn {
+
+      #buttons-container {
+        display: flex;
+        justify-content: center;
+      }
+
+      .button {
         background-color: transparent;
-        border: 2px solid #0066ff;
-        color: #0066ff;
+        border: 2px solid #FFFFFF;
+        border-radius: 5px;
+        color: #FFFFFF;
+        font-size: 16px;
+        font-weight: bold;
+        margin-right: 20px;
         padding: 10px 20px;
-        font-size: 20px;
-        cursor: pointer;
+        text-decoration: none;
         transition: all 0.3s ease-in-out;
       }
-      .btn:hover {
-        background-color: #0066ff;
-        color: white;
+
+      .button:hover {
+        background-color: #2F80ED;
+        border-color: #2F80ED;
+        color: #FFFFFF;
+        transition: all 0.3s ease-in-out;
       }
-      /* CSS para el modal */
-      .modal {
-        display: none;
-        position: fixed;
-        z-index: 1;
-        padding-top: 100px;
-        left: 0;
-        top: 0;
-        width: 100%;
-        height: 100%;
-        overflow: auto;
-        background-color: rgba(0,0,0,0.8);
-      }
-      .modal-content {
-        position: relative;
-        background-color: #fefefe;
-        margin: auto;
-        padding: 0;
-        border: 1px solid #888;
-        width: 80%;
-        max-width: 700px;
-      }
-      .close {
-        position: absolute;
-        right: 0;
-        top: 0;
-        color: #aaaaaa;
-        font-size: 28px;
-        font-weight: bold;
-        cursor: pointer;
-      }
-      .close:hover,
-      .close:focus {
-        color: #000;
-        text-decoration: none;
-        cursor: pointer;
-      }
-      .zoom {
-        transition: transform .2s;
-      }
-      .zoom:hover {
-        transform: scale(1.1);
-      }
+      .manual-button {
+  background-color: blue;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
     </style>
   </head>
-  <body style="background-image: url(https://i.imgur.com/3AiL3yN.png); background-size: cover; filter: blur(60%);">
-    <div class="center">
-      <h1 style="text-align: center;">WinTo7</h1>
-      <p style="text-align: center;">Transformador de Windows 10/11 a Windows 7</p>
-      <img src="https://user-images.githubusercontent.com/71569318/226740666-575ca5e1-e757-48c8-bed5-aa4f1932fcc4.png" alt="WinTo7" class="zoom">
-      <br>
-      <a href="https://github.com/Danucosukosuko/WinTo7/releases" target="_blank"><button class="btn">Descargar</button></a>
-      <button class="btn" onclick="openModal()">Manual</button>
-      <div id="myModal" class="modal">
-        <div class="modal-content">
-          <span class="close" onclick="closeModal()">&times;</span>
-          <iframe src="https://github.com/Danucosukosuko/WinTo7/blob/main/LICENSE" style="width:100%;height:500px;"></iframe>
-        </div>
-      </div>
+  <body>
+    <h1 id="center">WinTo7</h1>
+    <p id="subheading">Transformador de Windows 10/11 a Windows 7</p>
+    <div id="image-container">
+      <img src="https://user-images.githubusercontent.com/71569318/226740666-575ca5e1-e757-48c8-bed5-aa4f1932fcc4.png" alt="WinTo7 image">
     </div>
-    <script>
-      // JavaScript para el modal
-      function openModal() {
-        document.getElementById("myModal").style.display = "block";
-      }
-      function closeModal() {
-        document.getElementById("myModal").style.display = "none";
-      }
-      // JavaScript para el botón
-      var btn = document.querySelector(".btn");
-      btn.addEventListener("click", function() {
-        btn.style.backgroundColor = "#0066ff";
-        btn.style.color = "white";
-  });
-</script>
+    <div id="buttons-container">
+      <a href="https://github.com/Danucosukosuko/WinTo7/releases" class="button">Descargar</a>
+      <a href="https://github.com/Danucosukosuko/WinTo7" class="button">Ver en Github</a>
+      <a href="https://github.com/Danucosukosuko/danucosuko.github.io/blob/main/WinTo7.pdf" target="_blank">
+  <button class="manual-button">Manual de Usuario</button>
+</a>
+    </div>
   </body>
 </html>
